@@ -12,7 +12,10 @@
     - Cost Management
     - Azure monitor (Application insights,Key Metrics)
     - Azure Biling
-
+    - Azure monitor 
+    - Ressource Groups
+    - Azure Storage account
+    - Budget
 ## Architecture
 
 - This is the architecture of the deployment in Azure.
