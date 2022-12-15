@@ -40,6 +40,24 @@ const Userschema = new mongoose.Schema({
   
   };
 
+  const updateUser = async (username,firstname,lastname,roles=[],address) => {
+   
+    const user = await User.updateOne(
+      {username:username},
+      { firstname: firstname,
+        lastname: lastname,
+        roles: roles,
+        address: address}
+      );
+  
+    user.save();
+  
+  };
 
-  module.exports = { User,addNewUser } ; 
+  const deleteUser = async (username) => {
+   
+    const user = await User.deleteOne({username: username})}
+
+
+  module.exports = { User, addNewUser, deleteUser ,updateUser} ; 
 
