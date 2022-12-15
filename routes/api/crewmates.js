@@ -12,6 +12,17 @@ const { User, addNewUser, deleteUser ,updateUser } = require("../../database/use
 })
 
   //gets members
+  router.post('/addimage', async (req,res)=>{
+    var username= req.body.username;
+    var imageurl= req.body.image;
+    const user = await User.updateOne(
+      {username:username},
+      { profile_image_url: imageurl,});
+      console.log(user);
+      res.status(200).json("image added succussfully");
+})
+
+  //gets members
   router.get('/byusername', async (req,res)=>{
     var username= req.body.username;
     const userbyUsername = await User.find({username:username});
@@ -21,7 +32,7 @@ const { User, addNewUser, deleteUser ,updateUser } = require("../../database/use
 
   //gets members
   router.get('/byaddress', async (req,res)=>{
-    var username= req.body.address;
+    var address= req.body.address;
     const userbyAdress = await User.find({address:address});
     console.log(userbyAdress)
     res.status(200).json(userbyAdress);
