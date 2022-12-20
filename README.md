@@ -20,7 +20,7 @@
 
 - This is the architecture of the deployment in Azure.
 
-![architecture](images/architecture.png)
+![architecture](images/Architecture.png)
 
 
 
